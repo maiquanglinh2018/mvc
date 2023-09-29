@@ -2,7 +2,7 @@
 require_once "models/Product.php";
 class ProductController
 {
-    public function listProduct()
+   public function listProduct()
     {
         //tạo ra 1 biến hứng dữ liệu từ hàm của model
         $product = new Product();
@@ -15,17 +15,17 @@ class ProductController
 //    echo "Đây là trang danh sách product";
     }
 
-    public function addProduct()
+   public function addProduct()
     {
         echo "Đây là trang thêm product";
     }
 
-    public function editProduct()
+   public function editProduct()
     {
         echo "Đây là trang sửa product";
     }
 
-    public function deleteProduct()
+   public function deleteProduct()
     {
         echo "Đây là chức năng xóa product";
     }

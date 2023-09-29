@@ -24,3 +24,4 @@ switch ($url) {
 // hoàn thiện các chức năng danh sách customer, thêm
 //sửa,xóa customer
 // lấy điểm lab 1 + 2
+// aa
