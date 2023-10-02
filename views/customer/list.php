@@ -8,20 +8,22 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="add.php">Thêm khách hàng</a>
     <table border="1">
         <tr>
             <td>ID</td>
-            <td>Tên sản phẩm</td>
-            <td>Giá</td>
+            <td>Tên</td>
+            <td>Tuổi</td>
         </tr>
-        <?php foreach ($products as $key=>$value) { ?>
+        <?php foreach ($customer as $key => $value) { ?>
         <tr>
             <td><?php echo $value['id'];?></td>
-            <td><?php echo $value['ten_sp'];?></td>
-            <td><?php echo $value['gia'];?></td>
+            <td><?php echo $value['name'];?></td>
+            <td><?php echo $value['age'];?></td>
+            <td><a href="edit?id=<?= $value['id'] ?>">Sửa</a></td>
+            <td><a href="delete?id=<?= $value['id'] ?>">Xoá</a></td>
         </tr>
         <?php } ?>
     </table>
-
 </body>
 </html>

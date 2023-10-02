@@ -1,5 +1,5 @@
 <?php
-const DBNAME = "test";
+const DBNAME = "lab";
 const DBUSER = "root";
 const DBPASS = "";
 const DBCHARSET = "utf8";

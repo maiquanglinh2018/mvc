@@ -1,17 +1,36 @@
 <?php
-require_once  'controllers/ProductController.php';
-$url = isset($_GET['url']) == true ? $_GET['url'] : "/";
+require_once  'controllers/CustomerController.php';
 
-switch ($url) {
+$request = rtrim($_SERVER['REQUEST_URI'], '/');
+$query_string = !empty($_SERVER['QUERY_STRING']) ? '?'.$_SERVER['QUERY_STRING'] : '';
+
+switch ($request) {
     case '/':
 
         //điều hướng về hàm listProduct trong productController
-        $productController = new ProductController();
-        $productController->listProduct();
+        $customerController = new CustomerController();
+        $customerController->listCustomer();
         break;
-    case 'add-product':
+    case '/add':
+        $customerController = new CustomerController();
+        $customerController->addCustomer();
+        break;
+    case '/create':
+        $customerController = new CustomerController();
+        $customerController->createCustomer();
+        break;
+    case '/edit'.$query_string:
 
-        addProduct();
+        $customerController = new CustomerController();
+        $customerController->editCustomer();
+        break;
+    case '/edit-save'.$query_string :
+        $customerController = new CustomerController();
+        $customerController->saveEdit();
+        break;
+    case '/delete'.$query_string:
+        $customerController = new CustomerController();
+        $customerController->deleteCustomer();
         break;
     // kiểm tra case = add-producrt điều hướng về hàm addProduct
 }
@@ -24,4 +43,3 @@ switch ($url) {
 // hoàn thiện các chức năng danh sách customer, thêm
 //sửa,xóa customer
 // lấy điểm lab 1 + 2
-// aa
